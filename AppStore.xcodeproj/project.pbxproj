@@ -22,6 +22,8 @@
 		DE6BBDFB27A0372500EC43FF /* FeatureSectionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBDFA27A0372500EC43FF /* FeatureSectionCollectionViewCell.swift */; };
 		DE6BBDFD27A03BD500EC43FF /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBDFC27A03BD500EC43FF /* SeparatorView.swift */; };
 		DE6BBDFF27A03EF900EC43FF /* RankingFeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBDFE27A03EF900EC43FF /* RankingFeatureSectionView.swift */; };
+		DE6BBE0127A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBE0027A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift */; };
+		DE6BBE0327A04B0600EC43FF /* ExchangeCodeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBE0227A04B0600EC43FF /* ExchangeCodeButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		DE6BBDFA27A0372500EC43FF /* FeatureSectionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureSectionCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE6BBDFC27A03BD500EC43FF /* SeparatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		DE6BBDFE27A03EF900EC43FF /* RankingFeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureSectionView.swift; sourceTree = "<group>"; };
+		DE6BBE0027A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE6BBE0227A04B0600EC43FF /* ExchangeCodeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCodeButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				DE6BBDF827A031A800EC43FF /* FeatureSectionView.swift */,
 				DE6BBDFA27A0372500EC43FF /* FeatureSectionCollectionViewCell.swift */,
 				DE6BBDFE27A03EF900EC43FF /* RankingFeatureSectionView.swift */,
+				DE6BBE0027A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift */,
+				DE6BBE0227A04B0600EC43FF /* ExchangeCodeButtonView.swift */,
 				DE6BBDFC27A03BD500EC43FF /* SeparatorView.swift */,
 			);
 			path = App;
@@ -195,6 +201,7 @@
 			files = (
 				DE6BBDF027A0209E00EC43FF /* TodayViewController.swift in Sources */,
 				DE6BBDFF27A03EF900EC43FF /* RankingFeatureSectionView.swift in Sources */,
+				DE6BBE0327A04B0600EC43FF /* ExchangeCodeButtonView.swift in Sources */,
 				DE6BBDEC27A01DCD00EC43FF /* TabBarViewController.swift in Sources */,
 				DE6BBDFD27A03BD500EC43FF /* SeparatorView.swift in Sources */,
 				DE6BBDD227A01B7F00EC43FF /* AppDelegate.swift in Sources */,
@@ -203,6 +210,7 @@
 				DE6BBDFB27A0372500EC43FF /* FeatureSectionCollectionViewCell.swift in Sources */,
 				DE6BBDD427A01B7F00EC43FF /* SceneDelegate.swift in Sources */,
 				DE6BBDF227A0237B00EC43FF /* TodayCollectionViewCell.swift in Sources */,
+				DE6BBE0127A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift in Sources */,
 				DE6BBDF927A031A800EC43FF /* FeatureSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,7 @@ class AppViewController: UIViewController {
     
     private let featureSectionView = FeatureSectionView(frame: .zero)
     private let rankingFeatureSectionView = RankingFeatureSectionView(frame: .zero)
-    private let exchangeCodeButtonView = UIView()
+    private let exchangeCodeButtonView = ExchangeCodeButtonView(frame: .zero)
     
     //MARK:- Life Cycle
     override func viewDidLoad() {
@@ -52,8 +52,11 @@ class AppViewController: UIViewController {
             $0.edges.equalToSuperview()
         }
         
-        
-        [featureSectionView, rankingFeatureSectionView, exchangeCodeButtonView].forEach{
+        let spacingView = UIView()
+        spacingView.snp.makeConstraints{
+            $0.height.equalTo(100)
+        }
+        [featureSectionView, rankingFeatureSectionView, exchangeCodeButtonView,spacingView].forEach{
 //            $0.snp.makeConstraints{
 //                $0.height.equalTo(500) 임의로 넣어 준것이고 stackView 안에 있기 때문에 내용에 맞춰서 height 설정되기 때문에 제거
 //            }

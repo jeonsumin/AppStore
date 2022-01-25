@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import SnapKit
+import SwiftUI
 
 class FeatureSectionView: UIView {
     //MARK:- Properties
-    private lazy var collectioinView : UICollectionView = {
+    private lazy var collectionView : UICollectionView = {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -25,7 +27,7 @@ class FeatureSectionView: UIView {
         return collectionView
     }()
     
-    private let separator = SeparatorView(frame: .zero)
+    private let separatorView = SeparatorView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,21 +40,22 @@ class FeatureSectionView: UIView {
     
     //MARK:- function
     func uiConfigure(){
-        [collectioinView,separator].forEach{
+        [collectionView,separatorView].forEach{
             addSubview($0)
         }
         
-        collectioinView.snp.makeConstraints{
+        collectionView.snp.makeConstraints{
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.bottom.equalToSuperview()
             $0.top.equalToSuperview().inset(16)
             $0.height.equalTo(snp.width)
         }
-        separator.snp.makeConstraints{
-            $0.leading.trailing.equalToSuperview()
-            $0.top.equalTo(collectioinView.snp.bottom).offset(50.0)
+        separatorView.snp.makeConstraints{
+            $0.top.equalTo(collectionView.snp.bottom).offset(16)
             $0.bottom.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
         }
     }
 }
@@ -74,7 +77,8 @@ extension FeatureSectionView: UICollectionViewDataSource {
 //MARK:- UICollectionViewDelegateFlowLayout
 extension FeatureSectionView:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 32, height: frame.height)
+        let width = collectionView.frame.width - 32
+        return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

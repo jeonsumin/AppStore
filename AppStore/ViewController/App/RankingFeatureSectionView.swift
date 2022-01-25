@@ -9,9 +9,11 @@ import UIKit
 import SnapKit
 
 class RankingFeatureSectionView: UIView {
-    private let cellHeight:CGFloat = 30
+//    private let cellHeight:CGFloat = 30
+    
     private let titleLabel = UILabel()
     private let showAllAppsButton = UIButton()
+    
     private lazy var collectionView: UICollectionView = {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -27,7 +29,7 @@ class RankingFeatureSectionView: UIView {
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "RankingFeatureCollectionViewCell")
+        collectionView.register(RankingFeatureCollectionViewCell.self, forCellWithReuseIdentifier: "RankingFeatureCollectionViewCell")
         return collectionView
     }()
     
@@ -65,7 +67,7 @@ class RankingFeatureSectionView: UIView {
         }
         collectionView.snp.makeConstraints{
             $0.top.equalTo(titleLabel.snp.bottom).offset(16)
-            $0.height.equalTo(cellHeight * 3)
+            $0.height.equalTo(RankingFeatureCollectionViewCell.cellHeight * 3)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
         }
@@ -87,8 +89,8 @@ extension RankingFeatureSectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingFeatureCollectionViewCell", for: indexPath)
-        cell.backgroundColor = .blue
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingFeatureCollectionViewCell", for: indexPath) as? RankingFeatureCollectionViewCell else { return UICollectionViewCell() }
+        cell.uiConfigure()
         return cell
     }
     
@@ -97,6 +99,6 @@ extension RankingFeatureSectionView: UICollectionViewDataSource {
 
 extension RankingFeatureSectionView:UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 32, height: cellHeight)
+        return CGSize(width: collectionView.frame.width - 32, height: RankingFeatureCollectionViewCell.cellHeight)
     }
 }
