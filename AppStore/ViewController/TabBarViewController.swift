@@ -22,7 +22,7 @@ class TabBarViewController: UITabBarController {
     }()
     
     private lazy var appViewController :UIViewController = {
-        let viewController = UIViewController()
+        let viewController = UINavigationController(rootViewController: AppViewController()) //네비게이션 컨트롤러 임베디드
         let tabBarItem = UITabBarItem(title: "앱",
                      image: UIImage(systemName: "square.stack.3d.up"),
                      tag: 1)
@@ -30,11 +30,19 @@ class TabBarViewController: UITabBarController {
          return viewController
      }()
     
+//    private let searchViewController = TodayViewController()
+    
     
     //MARK: - Life Cycle 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         viewControllers = [todayViewController, appViewController]
+        
+        
+        
+// tabBarItem 추가 하는 코드
+//        searchViewController.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), tag: 2)
+//        viewControllers = [todayViewController, appViewController, searchViewController]
     }
 }
