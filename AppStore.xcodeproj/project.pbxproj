@@ -24,6 +24,7 @@
 		DE6BBDFF27A03EF900EC43FF /* RankingFeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBDFE27A03EF900EC43FF /* RankingFeatureSectionView.swift */; };
 		DE6BBE0127A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBE0027A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift */; };
 		DE6BBE0327A04B0600EC43FF /* ExchangeCodeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBE0227A04B0600EC43FF /* ExchangeCodeButtonView.swift */; };
+		DEBC568727A0C84B0013CAD2 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC568627A0C84B0013CAD2 /* AppDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		DE6BBDFE27A03EF900EC43FF /* RankingFeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureSectionView.swift; sourceTree = "<group>"; };
 		DE6BBE0027A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE6BBE0227A04B0600EC43FF /* ExchangeCodeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCodeButtonView.swift; sourceTree = "<group>"; };
+		DEBC568627A0C84B0013CAD2 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				DE6BBDF727A02C2B00EC43FF /* App */,
 				DE6BBDEE27A0208900EC43FF /* Today */,
 				DE6BBDEB27A01DCD00EC43FF /* TabBarViewController.swift */,
+				DEBC568627A0C84B0013CAD2 /* AppDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				DE6BBDFB27A0372500EC43FF /* FeatureSectionCollectionViewCell.swift in Sources */,
 				DE6BBDD427A01B7F00EC43FF /* SceneDelegate.swift in Sources */,
 				DE6BBDF227A0237B00EC43FF /* TodayCollectionViewCell.swift in Sources */,
+				DEBC568727A0C84B0013CAD2 /* AppDetailViewController.swift in Sources */,
 				DE6BBE0127A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift in Sources */,
 				DE6BBDF927A031A800EC43FF /* FeatureSectionView.swift in Sources */,
 			);
