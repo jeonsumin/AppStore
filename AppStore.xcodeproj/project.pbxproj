@@ -31,6 +31,7 @@
 		DEBC569227A0D6030013CAD2 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC569127A0D6030013CAD2 /* Today.swift */; };
 		DEBC569427A0D6860013CAD2 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC569327A0D6860013CAD2 /* Feature.swift */; };
 		DEBC569627A0D6BD0013CAD2 /* RankingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC569527A0D6BD0013CAD2 /* RankingFeature.swift */; };
+		DEBC569827A0E2330013CAD2 /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC569727A0E2330013CAD2 /* TodayDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		DEBC569127A0D6030013CAD2 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
 		DEBC569327A0D6860013CAD2 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		DEBC569527A0D6BD0013CAD2 /* RankingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeature.swift; sourceTree = "<group>"; };
+		DEBC569727A0E2330013CAD2 /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				DE6BBDEE27A0208900EC43FF /* Today */,
 				DEBC568627A0C84B0013CAD2 /* AppDetailViewController.swift */,
 				DE6BBDEB27A01DCD00EC43FF /* TabBarViewController.swift */,
+				DEBC569727A0E2330013CAD2 /* TodayDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				DE6BBDF027A0209E00EC43FF /* TodayViewController.swift in Sources */,
 				DEBC569227A0D6030013CAD2 /* Today.swift in Sources */,
 				DE6BBDFF27A03EF900EC43FF /* RankingFeatureSectionView.swift in Sources */,
+				DEBC569827A0E2330013CAD2 /* TodayDetailViewController.swift in Sources */,
 				DE6BBE0327A04B0600EC43FF /* ExchangeCodeButtonView.swift in Sources */,
 				DEBC569627A0D6BD0013CAD2 /* RankingFeature.swift in Sources */,
 				DEBC569427A0D6860013CAD2 /* Feature.swift in Sources */,
