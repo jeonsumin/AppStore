@@ -11,6 +11,7 @@ import SnapKit
 class RankingFeatureSectionView: UIView {
 //    private let cellHeight:CGFloat = 30
     
+    private var rankingFeatureList : [RankingFeature] = []
     private let titleLabel = UILabel()
     private let showAllAppsButton = UIButton()
     
@@ -38,6 +39,8 @@ class RankingFeatureSectionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         uiConfigure()
+        fetchData()
+        collectionView.reloadData()
     }
     
     required init?(coder: NSCoder) {
@@ -77,20 +80,30 @@ class RankingFeatureSectionView: UIView {
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
         }
+    }
+    func fetchData(){
+        guard let url = Bundle.main.url(forResource: "RankingFeature", withExtension: "plist")
+        else { return }
         
-        
-        
+        do{
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([RankingFeature].self, from: data)
+            rankingFeatureList = result
+        }catch{
+            
+        }
     }
 }
 
 extension RankingFeatureSectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 9
+        return rankingFeatureList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingFeatureCollectionViewCell", for: indexPath) as? RankingFeatureCollectionViewCell else { return UICollectionViewCell() }
-        cell.uiConfigure()
+        let rankingFeature = rankingFeatureList[indexPath.row]
+        cell.uiConfigure(rankingFeature: rankingFeature)
         return cell
     }
     

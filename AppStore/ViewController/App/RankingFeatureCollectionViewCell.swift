@@ -17,18 +17,18 @@ class RankingFeatureCollectionViewCell :UICollectionViewCell {
     private let downloadButton = UIButton(type: .system)
     private let inAppPurchaseInfoLabel = UILabel()
     
-    func uiConfigure(){
+    func uiConfigure(rankingFeature : RankingFeature){
         imageView.backgroundColor = .tertiarySystemGroupedBackground
         imageView.layer.cornerRadius = 7
         imageView.layer.borderColor = UIColor.tertiaryLabel.cgColor
         imageView.layer.borderWidth = 0.5
     
-        titleLabel.text = "앱 이름"
+        titleLabel.text = rankingFeature.title
         titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
         titleLabel.textColor = .label
         titleLabel.numberOfLines = 2
         
-        descriptionLabel.text = "설명설명"
+        descriptionLabel.text = rankingFeature.description
         descriptionLabel.font = .systemFont(ofSize: 13, weight: .semibold)
         descriptionLabel.textColor = .secondaryLabel
         
@@ -42,7 +42,7 @@ class RankingFeatureCollectionViewCell :UICollectionViewCell {
         inAppPurchaseInfoLabel.font = .systemFont(ofSize: 10, weight: .semibold)
         inAppPurchaseInfoLabel.textColor = .secondaryLabel
         
-        inAppPurchaseInfoLabel.isHidden = [true,false].randomElement() ?? true
+        inAppPurchaseInfoLabel.isHidden = rankingFeature.isInPurchaseApp
         
         [imageView,titleLabel,descriptionLabel,downloadButton,inAppPurchaseInfoLabel].forEach{
             addSubview($0)

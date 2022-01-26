@@ -11,6 +11,8 @@ import SwiftUI
 
 class FeatureSectionView: UIView {
     //MARK:- Properties
+    private var featureList: [Feature] = []
+    
     private lazy var collectionView : UICollectionView = {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -32,6 +34,9 @@ class FeatureSectionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         uiConfigure()
+        fetchData()
+        collectionView.reloadData()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -58,17 +63,30 @@ class FeatureSectionView: UIView {
             $0.trailing.equalToSuperview()
         }
     }
+    
+    func fetchData(){
+        guard let url = Bundle.main.url(forResource: "Feature", withExtension: "plist")
+        else { return }
+        do{
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Feature].self, from: data)
+            featureList = result
+        } catch {
+            
+        }
+    }
 }
 
 //MARK:- UICollectionViewDataSource
 extension FeatureSectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return featureList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeatureSectionCollectionViewCell", for: indexPath) as? FeatureSectionCollectionViewCell else { return  UICollectionViewCell() }
-        
+        let feature = featureList[indexPath.row]
+        cell.uiConfigure(feature: feature)
         return cell
     }
     

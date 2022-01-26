@@ -11,6 +11,7 @@ import SwiftUI
 
 class AppDetailViewController: UIViewController {
 
+    private var today : Today
     private let appIconImageView = UIImageView()
     private let titleLabel = UILabel()
     private let subTitle = UILabel()
@@ -23,17 +24,30 @@ class AppDetailViewController: UIViewController {
         uiConfigure()
     }
     
+    
+    init(today: Today){
+        self.today = today
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     func uiConfigure(){
+        
+        
         appIconImageView.contentMode = .scaleAspectFill
         appIconImageView.clipsToBounds = true
         appIconImageView.layer.cornerRadius = 8
         appIconImageView.backgroundColor = .gray
         
-        titleLabel.text = "앱 이름"
+        titleLabel.text = today.title
         titleLabel.font = .systemFont(ofSize: 20, weight: .bold)
         titleLabel.textColor = .label
         
-        subTitle.text = "설명설명"
+        subTitle.text = today.subTitle
         subTitle.font = .systemFont(ofSize: 14, weight: .medium)
         subTitle.textColor = .secondaryLabel
         
