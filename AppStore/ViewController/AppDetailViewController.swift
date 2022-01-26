@@ -60,6 +60,7 @@ class AppDetailViewController: UIViewController {
 
         sharedButton.setImage(UIImage(systemName: "square.and.arrow.up"),for: .normal)
         sharedButton.tintColor = .systemBlue
+        sharedButton.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
         
         [appIconImageView, titleLabel, subTitle, downloadButton, sharedButton].forEach{
             view.addSubview($0)
@@ -93,5 +94,12 @@ class AppDetailViewController: UIViewController {
 
             
         }
+    }
+    
+    @objc private func didTapShareButton(){
+        let activityItems: [Any] = [today.title]
+        let activityViewController  = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        
+        present(activityViewController, animated: true, completion: nil)
     }
 }
