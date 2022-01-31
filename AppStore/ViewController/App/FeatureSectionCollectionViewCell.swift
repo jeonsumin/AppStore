@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class FeatureSectionCollectionViewCell: UICollectionViewCell {
     
@@ -15,24 +16,27 @@ class FeatureSectionCollectionViewCell: UICollectionViewCell {
     private let descriptionLabel = UILabel()
     private let imageView = UIImageView()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        uiConfigure()
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        uiConfigure()
+//    }
     
-    func uiConfigure(){
-        typeLabel.text = "새로운 경험"
+    func uiConfigure(feature: Feature){
+        typeLabel.text = feature.type
         typeLabel.font = .systemFont(ofSize: 12, weight: .semibold)
         typeLabel.textColor = .systemBlue
         
-        appNameLabel.text = "App Name"
+        appNameLabel.text = feature.appName
         appNameLabel.font = .systemFont(ofSize: 20, weight: .bold)
         appNameLabel.textColor = .label
         
-        descriptionLabel.text = "설명설명"
+        descriptionLabel.text = feature.description
         descriptionLabel.font = .systemFont(ofSize: 16, weight: .semibold)
         descriptionLabel.textColor = .secondaryLabel
         
+        if let url = URL(string: feature.imageURL) {
+            imageView.kf.setImage(with: url)
+        }
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 7
         imageView.layer.borderWidth = 0.5

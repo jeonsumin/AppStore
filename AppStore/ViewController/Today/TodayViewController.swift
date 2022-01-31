@@ -10,6 +10,9 @@ import SnapKit
 
 final class TodayViewController: UIViewController {
     
+    //MARK: - Properties
+    private var todayList:[Today] = []
+    
     private lazy var CollectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -33,6 +36,21 @@ final class TodayViewController: UIViewController {
         CollectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        
+        fetchData()
+    }
+    
+    //MARK: - Function
+    func fetchData(){
+        guard let url = Bundle.main.url(forResource: "Today", withExtension: "plist") else { return }
+        do{
+            let data = try Data(contentsOf: url)
+            let result = try PropertyListDecoder().decode([Today].self, from: data)
+            
+            todayList = result
+        }catch{
+            
+        }
     }
 }
 //MARK: - CollectionView DataSource
@@ -47,12 +65,13 @@ extension TodayViewController: UICollectionViewDataSource {
         
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return todayList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodayCell", for: indexPath) as? TodayCollectionViewCell else { return UICollectionViewCell() }
-        
+        let today = todayList[indexPath.row]
+        cell.uiConfigure(today: today)
         return cell
     }
     
@@ -64,7 +83,7 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
     //cell size sizeForItemAt
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width - 32.0
-    
+        
         return CGSize(width: width, height: width)
     }
     
@@ -76,5 +95,11 @@ extension TodayViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let value: CGFloat = 16.0
         return UIEdgeInsets(top: value, left: value, bottom: value, right: value)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let today = todayList[indexPath.row]
+        let vc = AppDetailViewController(today: today)
+        present(vc, animated: true, completion: nil)
     }
 }

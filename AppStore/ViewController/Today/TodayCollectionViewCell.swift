@@ -7,7 +7,7 @@
 
 import SnapKit
 import UIKit
-
+import Kingfisher
 
 class TodayCollectionViewCell :UICollectionViewCell {
     //MARK: - Properties
@@ -16,29 +16,32 @@ class TodayCollectionViewCell :UICollectionViewCell {
     private let descriptionLabel = UILabel()
     private let imageView = UIImageView()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        uiConfigure()
-    }
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        uiConfigure()
+//    }
     
-    func uiConfigure() {
+    func uiConfigure(today: Today) {
     
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.3
         layer.shadowRadius = 10
         
-        titleLabel.text = "타이틀"
+        titleLabel.text = today.title
         titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
         titleLabel.textColor = .white
         
-        subTitleLabel.text = "서브타이틀"
+        subTitleLabel.text = today.subTitle
         subTitleLabel.font = .systemFont(ofSize: 14, weight: .bold)
         subTitleLabel.textColor = .white
         
-        descriptionLabel.text = "설명설명"
+        descriptionLabel.text = today.description
         descriptionLabel.font = .systemFont(ofSize: 14, weight: .bold)
         descriptionLabel.textColor = .white
         
+        if let imageURL = URL(string: today.imageURL) {
+            imageView.kf.setImage(with:imageURL)
+        }
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 12

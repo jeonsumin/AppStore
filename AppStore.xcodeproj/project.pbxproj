@@ -24,6 +24,14 @@
 		DE6BBDFF27A03EF900EC43FF /* RankingFeatureSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBDFE27A03EF900EC43FF /* RankingFeatureSectionView.swift */; };
 		DE6BBE0127A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBE0027A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift */; };
 		DE6BBE0327A04B0600EC43FF /* ExchangeCodeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6BBE0227A04B0600EC43FF /* ExchangeCodeButtonView.swift */; };
+		DEBC568727A0C84B0013CAD2 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC568627A0C84B0013CAD2 /* AppDetailViewController.swift */; };
+		DEBC568D27A0D5480013CAD2 /* Today.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEBC568A27A0D5480013CAD2 /* Today.plist */; };
+		DEBC568E27A0D5480013CAD2 /* Feature.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEBC568B27A0D5480013CAD2 /* Feature.plist */; };
+		DEBC568F27A0D5480013CAD2 /* RankingFeature.plist in Resources */ = {isa = PBXBuildFile; fileRef = DEBC568C27A0D5480013CAD2 /* RankingFeature.plist */; };
+		DEBC569227A0D6030013CAD2 /* Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC569127A0D6030013CAD2 /* Today.swift */; };
+		DEBC569427A0D6860013CAD2 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC569327A0D6860013CAD2 /* Feature.swift */; };
+		DEBC569627A0D6BD0013CAD2 /* RankingFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC569527A0D6BD0013CAD2 /* RankingFeature.swift */; };
+		DEBC569827A0E2330013CAD2 /* TodayDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBC569727A0E2330013CAD2 /* TodayDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +52,14 @@
 		DE6BBDFE27A03EF900EC43FF /* RankingFeatureSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureSectionView.swift; sourceTree = "<group>"; };
 		DE6BBE0027A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeatureCollectionViewCell.swift; sourceTree = "<group>"; };
 		DE6BBE0227A04B0600EC43FF /* ExchangeCodeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCodeButtonView.swift; sourceTree = "<group>"; };
+		DEBC568627A0C84B0013CAD2 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		DEBC568A27A0D5480013CAD2 /* Today.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Today.plist; sourceTree = "<group>"; };
+		DEBC568B27A0D5480013CAD2 /* Feature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Feature.plist; sourceTree = "<group>"; };
+		DEBC568C27A0D5480013CAD2 /* RankingFeature.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RankingFeature.plist; sourceTree = "<group>"; };
+		DEBC569127A0D6030013CAD2 /* Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Today.swift; sourceTree = "<group>"; };
+		DEBC569327A0D6860013CAD2 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		DEBC569527A0D6BD0013CAD2 /* RankingFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingFeature.swift; sourceTree = "<group>"; };
+		DEBC569727A0E2330013CAD2 /* TodayDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +94,8 @@
 		DE6BBDD027A01B7F00EC43FF /* AppStore */ = {
 			isa = PBXGroup;
 			children = (
+				DEBC569027A0D5DD0013CAD2 /* Model */,
+				DEBC568827A0D5380013CAD2 /* Resource */,
 				DE6BBDD127A01B7F00EC43FF /* AppDelegate.swift */,
 				DE6BBDD327A01B7F00EC43FF /* SceneDelegate.swift */,
 				DE6BBDED27A0206F00EC43FF /* ViewController */,
@@ -93,7 +111,9 @@
 			children = (
 				DE6BBDF727A02C2B00EC43FF /* App */,
 				DE6BBDEE27A0208900EC43FF /* Today */,
+				DEBC568627A0C84B0013CAD2 /* AppDetailViewController.swift */,
 				DE6BBDEB27A01DCD00EC43FF /* TabBarViewController.swift */,
+				DEBC569727A0E2330013CAD2 /* TodayDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -120,6 +140,26 @@
 				DE6BBDFC27A03BD500EC43FF /* SeparatorView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		DEBC568827A0D5380013CAD2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC568A27A0D5480013CAD2 /* Today.plist */,
+				DEBC568B27A0D5480013CAD2 /* Feature.plist */,
+				DEBC568C27A0D5480013CAD2 /* RankingFeature.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DEBC569027A0D5DD0013CAD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEBC569127A0D6030013CAD2 /* Today.swift */,
+				DEBC569327A0D6860013CAD2 /* Feature.swift */,
+				DEBC569527A0D6BD0013CAD2 /* RankingFeature.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,7 +228,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE6BBDDE27A01B8000EC43FF /* LaunchScreen.storyboard in Resources */,
+				DEBC568F27A0D5480013CAD2 /* RankingFeature.plist in Resources */,
+				DEBC568D27A0D5480013CAD2 /* Today.plist in Resources */,
 				DE6BBDDB27A01B8000EC43FF /* Assets.xcassets in Resources */,
+				DEBC568E27A0D5480013CAD2 /* Feature.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +243,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE6BBDF027A0209E00EC43FF /* TodayViewController.swift in Sources */,
+				DEBC569227A0D6030013CAD2 /* Today.swift in Sources */,
 				DE6BBDFF27A03EF900EC43FF /* RankingFeatureSectionView.swift in Sources */,
+				DEBC569827A0E2330013CAD2 /* TodayDetailViewController.swift in Sources */,
 				DE6BBE0327A04B0600EC43FF /* ExchangeCodeButtonView.swift in Sources */,
+				DEBC569627A0D6BD0013CAD2 /* RankingFeature.swift in Sources */,
+				DEBC569427A0D6860013CAD2 /* Feature.swift in Sources */,
 				DE6BBDEC27A01DCD00EC43FF /* TabBarViewController.swift in Sources */,
 				DE6BBDFD27A03BD500EC43FF /* SeparatorView.swift in Sources */,
 				DE6BBDD227A01B7F00EC43FF /* AppDelegate.swift in Sources */,
@@ -210,6 +257,7 @@
 				DE6BBDFB27A0372500EC43FF /* FeatureSectionCollectionViewCell.swift in Sources */,
 				DE6BBDD427A01B7F00EC43FF /* SceneDelegate.swift in Sources */,
 				DE6BBDF227A0237B00EC43FF /* TodayCollectionViewCell.swift in Sources */,
+				DEBC568727A0C84B0013CAD2 /* AppDetailViewController.swift in Sources */,
 				DE6BBE0127A046AF00EC43FF /* RankingFeatureCollectionViewCell.swift in Sources */,
 				DE6BBDF927A031A800EC43FF /* FeatureSectionView.swift in Sources */,
 			);
